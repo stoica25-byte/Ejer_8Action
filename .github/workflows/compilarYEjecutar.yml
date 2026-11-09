@@ -1,0 +1,30 @@
+name: action compilar java
+
+on:
+  push:
+  
+  jobs:
+    compilar_java:
+      runs-on: ubuntu-latest
+        steps:
+         - name : descargar repo
+            run:
+              actions/checkout/v4
+         
+         
+         -name : configurar jdk
+           uses : actions/setup-java@v4
+             with:
+               java-version : '21'
+                 distribution : 'temurin'
+                 
+                 
+         -name : compilar java
+           run : | 
+             javac src/hola_mundo.java
+             java -cp src hola_mundo
+             
+              
+          
+      
+      
