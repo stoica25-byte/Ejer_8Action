@@ -19,7 +19,7 @@ jobs:
       - name: compilarjava
         run: |
           javac src/main.java
-          java -cp src hola_mundo
+          java -cp src main
               
           
       
